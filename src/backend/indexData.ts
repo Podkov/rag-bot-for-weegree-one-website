@@ -4,9 +4,11 @@ import { config } from 'dotenv';
 import { readdirSync, readFileSync } from 'fs';
 import { join, resolve, basename } from 'path';
 
-// Wczytaj zmienne środowiskowe
-const envPath = resolve(process.cwd(), 'D:/Workspace/AI Projects/rag-bot-for-weegree-one-website/src/.env');
-config({ path: envPath });
+// Wczytaj zmienne środowiskowe (standardowy .env lub env z systemu)
+const result = config();
+if (result.error) {
+  console.warn('No .env file loaded (continuing):', result.error);
+}
 
 const qdrant = new QdrantClient({
   url: process.env.QDRANT_URL || 'http://localhost:6333',

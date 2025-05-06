@@ -3,13 +3,10 @@ import { writeFileSync, existsSync, mkdirSync, unlinkSync } from 'fs';
 import { join, resolve, dirname, basename } from 'path';
 import { config } from 'dotenv';
 
-// Konfiguracja zmiennych środowiskowych z pliku .env
-const envPath = resolve(process.cwd(), 'D:/Workspace/AI Projects/rag-bot-for-weegree-one-website/src/.env');
-const result = config({ path: envPath });
-
+// Konfiguracja zmiennych środowiskowych (standardowy .env w root lub env z systemu)
+const result = config();
 if (result.error) {
-  console.error('Error loading .env file:', result.error);
-  process.exit(1);
+  console.warn('No .env file loaded (continuing):', result.error);
 }
 
 // Sprawdzenie czy zmienne są poprawnie załadowane
