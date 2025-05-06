@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Jeśli potrzebujemy dodatkowych globalnych styli / animacji */
+.dot {
+  @apply inline-block h-2 w-2 bg-gray-300 rounded-full;
+} 
