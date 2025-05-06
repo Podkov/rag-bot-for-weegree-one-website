@@ -90,8 +90,8 @@ Aplikacja RAG (Retrieval-Augmented Generation) umożliwia zadawanie pytań o ofe
    ```
 
 Otwórz przeglądarkę:
-- Frontend: http://localhost:5173/
-- API: http://localhost:3000/ask
+- Frontend: lokalnie http://localhost:5173/ lub wystawiona strona https://rag-bot-for-weegree-one-website-1.onrender.com/
+- API: lokalnie http://localhost:3000/ask lub https://rag-bot-for-weegree-one-website.onrender.com/ask
 
 ## Licencja
 ISC 
